@@ -6,10 +6,12 @@ from world import Room
 
 def input_handler(string) -> str:
     retvar = ""
-    if string.lower() in ["quit", "exit", "leave", "q", "camp"]:
+    if string.lower() in ["quit", "exit", "leave", "q", "camp", "pardon?"]:
         retvar = "quit"
-    if string.lower() in ["east", "west", "up", "down", "north", "south"]:
+    elif string.lower() in ["east", "west", "up", "down", "north", "south"]:
         retvar = go(character, locations, rooms, string.lower())
+    else:
+        retvar = "Pardon?"
     return retvar
 
 
@@ -201,8 +203,8 @@ if __name__ == "__main__":
     # print("\033[1m-- cstrip --\033[0m")
     # for s in samples:
     #     print(f"  {cstrip(s)}")
-    
-    character = 'Moted'
+
+    character = "Moted"
     cprint(rooms[locations[character]])
     crepl(
         handler=input_handler,
