@@ -12,14 +12,27 @@ from ashenmoor.world import Mob
 from ashenmoor.world.zone import make_spawner
 
 TEMPLATES: dict[str, dict] = {
-
     "wandering_student": {
-        "name":             "a wandering student",
-        "key_words":        ("student", "wandering"),
+        "name": "a wandering student",
+        "key_words": ("student", "wandering"),
         "room_description": "&wA wandering student meanders about aimlessly.&N",
         "description": (
             "A student with a faraway look, clearly lost in thought.\n"
             "Or possibly just lost."
+        ),
+        "race": "Human",
+        "class": "Student",
+        "level": 1,
+        "stats": [60, 65, 60, 80, 70, 75],
+        "aggro": False,
+        "wander": True,
+    },
+    "void_dragon": {
+        "name": "Inanis the Void Dragon",
+        "key_words": ("inanis"),
+        "room_description": "A large &Mdragon&N stands here looking around &Ragitated&N.",
+        "description": (
+            "This large purple and black dragon seems to have a shroud of darkness around it. Its eyes appear to be pits of blackness"
         ),
         "race":     "Human",
         "class":    "Student",
@@ -28,7 +41,7 @@ TEMPLATES: dict[str, dict] = {
         "aggro":    False,
         "wander":   True,
     },
-
+      
         "weasel": {
         "name":             "weasel",
         "key_words":        ("weasel"),
@@ -44,42 +57,47 @@ TEMPLATES: dict[str, dict] = {
         "aggro":    False,
         "wander":   True,
     },
-
         "my_friend": {
         "name":             "a wandering student",
         "key_words":        ("student", "wandering"),
         "room_description": "&wA wandering student meanders about aimlessly.&N",
-        "description": (
-            "A student with a faraway look, clearly lost in thought.\n"
-            "Or possibly just lost."
-        ),
-        "race":     "Human",
-        "class":    "Student",
-        "level":    1,
-        "stats":    [60, 65, 60, 80, 70, 75],
-        "aggro":    False,
-        "wander":   True,
+        "race": "non-humanoid",
+        "class": "",
+        "level": 50,
+        "stats": [100, 100, 100, 100, 100, 100],
+        "aggro": True,
+        "wander": False,
     },
-
     "void_guardian": {
-        "name":             "the Void Guardian",
-        "key_words":        ("guardian", "void"),
-        "room_description": (
-            "&XThe &+WVoid Guardian&N&X stands watch, unblinking.&N"
-        ),
+        "name": "the Void Guardian",
+        "key_words": ("guardian", "void"),
+        "room_description": ("&XThe &+WVoid Guardian&N&X stands watch, unblinking.&N"),
         "description": (
             "&XA towering figure of condensed darkness.\n"
             "Its eyes are two cold points of &+Wwhite light&N&X.&N"
         ),
-        "race":     "Unknown",
-        "class":    "Guardian",
-        "level":    50,
-        "stats":    [120, 100, 130, 90, 110, 50],
-        "aggro":    False,
-        "wander":   False,
+        "race": "Unknown",
+        "class": "Guardian",
+        "level": 50,
+        "stats": [120, 100, 130, 90, 110, 50],
+        "aggro": False,
+        "wander": False,
         "position": "standing",
     },
-
+    # kill=False — combat system refuses killing blow on this mob.
+    "moted_pc": {
+        "name": "Moted",
+        "key_words": ("moted", "dwarf"),
+        "room_description": "&wMoted the Dwarf is here.&N",
+        "description": "A weathered Dwarven shaman. Best not to cross him.",
+        "race": "Dwarf",
+        "class": "Shaman",
+        "level": 24,
+        "stats": [88, 80, 80, 80, 80, 80],
+        "aggro": False,
+        "wander": False,
+        "kill": False,
+    },
 }
 
 # Module-level spawn — rooms.py calls  M.spawn("void_guardian")
