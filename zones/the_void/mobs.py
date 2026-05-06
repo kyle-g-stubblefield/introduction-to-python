@@ -212,6 +212,23 @@ TEMPLATES: dict[str, dict] = {
         "aggro": True,
         "wander": True,
     },
+
+    "the cheese monster": {
+        "name": "the cheese monster",
+        "key_words": ("cheese", "monster"),
+        "room_description": "&Ythe cheese monster sleeps here&N"
+        "description": (
+            "a cheese monster thinking into space "
+            "most likely thinking about &msleep..."
+        ),
+        "race": "cheese",
+        "class": "scary guy",
+        "level": "29",
+        "stats": [46, 59, 65, 55, 75, 80]
+        "aggro": False,
+        "wander": False,
+    },
+
     "Sand Puma": {
         "name":             "Sand Puma",
         "key_words":        ("puma"),
